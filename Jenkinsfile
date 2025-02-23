@@ -4,7 +4,7 @@ pipeline {
         //here if you create any variable you will have global access, since it is environment no need of def
         packageVersion = '' 
     }
-    stages {
+    /* stages {
         stage('Get version'){
             steps{
                 script{
@@ -13,7 +13,23 @@ pipeline {
                     echo "version: ${packageVersion}"
                 }
             }
+        } */
+
+
+        stage('Get version') {
+            steps {
+                script {
+                    if (fileExists('package.json')) {
+                        def packageJson = readJSON(file: 'package.json')
+                        def packageVersion = packageJson.version
+                        echo "version: ${packageVersion}"
+                    } else {
+                        error "package.json not found!"
+                    }
+                }
+            }
         }
+
         stage('Install depdencies') {
             steps {
                 sh '''
