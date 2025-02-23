@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label 'Agent-1' } }
+    agent { node { label 'AGENT-1' } }
     environment{
         //here if you create any variable you will have global access, since it is environment no need of def
         packageVersion = '' 
