@@ -5,7 +5,7 @@ pipeline {
         packageVersion = '' 
     }
     stages {
-        stage('Get version'){
+        /* stage('Get version'){
             steps{
                 script{
                     def packageJson = readJSON(file: 'package.json')
@@ -35,7 +35,7 @@ pipeline {
                 sh 'ls -ltr'
                 sh 'zip -r catalogue.zip ./* --exclude=.git --exclude=.zip'
             }
-        }
+        } */
         stage('SAST') {
             steps {
                 echo "SAST Done"
