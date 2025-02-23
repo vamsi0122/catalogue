@@ -5,15 +5,15 @@ pipeline {
         packageVersion = '' 
     }
     stages {
-        /* stage('Get version'){
-            steps{
-                script{
-                    def packageJson = readJSON(file: 'package.json')
-                    packageVersion = packageJson.version
-                    echo "version: ${packageVersion}"
-                }
-            }
-        }
+        // stage('Get version'){
+        //     steps{
+        //         script{
+        //             def packageJson = readJSON(file: 'package.json')
+        //             packageVersion = packageJson.version
+        //             echo "version: ${packageVersion}"
+        //         }
+        //     }
+        // }
         stage('Install depdencies') {
             steps {
                 sh 'npm install'
@@ -35,11 +35,11 @@ pipeline {
                 sh 'ls -ltr'
                 sh 'zip -r catalogue.zip ./* --exclude=.git --exclude=.zip'
             }
-        } */
+        }
         stage('SAST') {
             steps {
                 echo "SAST Done"
-                echo "package version: $packageVersion"
+                //echo "package version: $packageVersion"
             }
         }
         //install pipeline utility steps plugin, if not installed
