@@ -57,7 +57,7 @@ pipeline {
         stage('SAST') {
             steps {
                 echo "SAST Done ok"
-                echo "package version: none"
+                echo "package version: $packageVersion"
             }
         }
         //install pipeline utility steps plugin, if not installed
@@ -68,7 +68,7 @@ pipeline {
                     protocol: 'http',
                     nexusUrl: '54.145.5.153:8081/',
                     groupId: 'com.roboshop',
-                    version: "2.0.0",
+                    version: "$",
                     repository: 'catalogue',
                     credentialsId: 'nexus-auth',
                     artifacts: [
