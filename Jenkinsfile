@@ -57,7 +57,7 @@ pipeline {
         stage('SAST') {
             steps {
                 echo "SAST Done ok"
-                echo "package version: $packageVersion"
+                echo "package version: none"
             }
         }
         //install pipeline utility steps plugin, if not installed
