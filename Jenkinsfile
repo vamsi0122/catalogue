@@ -5,7 +5,7 @@ pipeline {
         packageVersion = '' 
     }
     stages {
-        stage('Get version'){
+        /* stage('Get version'){
             steps{
                 script{
                     def packageJson = readJSON(file: 'package.json')
@@ -13,7 +13,7 @@ pipeline {
                     echo "version: ${packageVersion}"
                 }
             }
-        }
+        } */
         stage('Install depdencies') {
             steps {
                 sh 'npm install'
