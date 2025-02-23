@@ -16,7 +16,7 @@ pipeline {
         // }
 
 
-        stage('Get version') {
+        /* stage('Get version') {
             steps {
                 script {
                     if (fileExists('package.json')) {
@@ -28,7 +28,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
 
         stage('Install depdencies') {
             steps {
